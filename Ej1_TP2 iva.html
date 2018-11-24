@@ -1,0 +1,46 @@
+<<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>
+      Pagina con JavaScript.
+    </title>
+    <script language="javascript">
+           function Coche(marca,modelo,precio)
+           {
+             this.marca=marca;
+             this.precio=precio;
+             this.modelo=modelo;
+           }
+          var coche1=new Coche("Renault","Laguna",1800);
+          var coche2=new Coche("Ford","Mondeo",2300);
+          var coche3=new Coche("Mercedes","600",8500);
+          var coche4=new Coche("Seat","Cordoba",3000);
+          var cadena;
+          cadena="El coche " + coche1.marca+" "+coche1.modelo+" vale " + coche1.precio + " dolares.";
+          document.write(cadena + "<br>");
+          cadena="El coche " + coche2.marca+" "+coche2.modelo+" vale " + coche2.precio + " dolares.";
+          document.write(cadena + "<br>");
+          cadena="El coche " + coche3.marca+" "+coche3.modelo+" vale " + coche3.precio + " dolares.";
+          document.write(cadena + "<br>");
+          cadena="El coche " + coche4.marca+" "+coche4.modelo+" vale " + coche4.precio + " dolares.";
+          document.write(cadena + "<br>");
+          var calcula;
+          calcula= "El coche " + coche1.marca+" "+coche1.modelo+" su iva es: "+coche1.precio*0.21 + " dolares.";
+          document.write(calcula+"<br>");
+          calcula= "El coche " + coche2.marca+" "+coche2.modelo+" su iva es: "+coche2.precio*0.21 + " dolares.";
+          document.write(calcula+"<br>");
+          calcula= "El coche " + coche3.marca+" "+coche3.modelo+" su iva es: "+coche3.precio*0.21 + " dolares.";
+          document.write(calcula+"<br>");
+          calcula= "El coche " + coche4.marca+" "+coche4.modelo+" su iva es: "+coche4.precio*0.21 + " dolares.";
+          document.write(calcula+"<br>");
+    </script>
+  </head>
+  <body>
+<h1>Objetos en JavaScript</h1>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+
+  </body>
+</html>>

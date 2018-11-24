@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <div>Top ten de artistas</div>
+    <br>
+    <script>
+        var xhttp = new XMLHttpRequest();
+        var url =
+            "http://ws.audioscrobbler.com/2.0/?method=chart.gettopartists&api_key=67d14dd249d83b660bed290a779a8b9c&format=json";
+        
+        function crearDiv(dato, color) {
+            var div = document.createElement('div');
+            var text = document.createTextNode(dato);
+            div.style.color = color;
+            div.appendChild(text);
+            return div;
+        }
+        
+        xhttp.open("GET", url, true);
+        xhttp.onreadystatechange = function () {
+            if (this.readyState == 4 && this.status == 200) {
+                var artist = JSON.parse(this.responseText).artists;
+                for (var i = 0; i <= 9; i++) {
+                    var aum = i;
+                    var name = artist.artist[i].name;
+                    var listeners = artist.artist[i].listeners;
+                    var playcount = artist.artist[i].playcount;
+                    var nameDiv = crearDiv((++aum) + " " + name, 'blue')
+                    var listenersDiv = crearDiv("Listeners: " + listeners, 'black')
+                    var playcountDiv = crearDiv("Playcount: " + listeners, 'black')
+                    document.body.appendChild(nameDiv);
+                    document.body.appendChild(listenersDiv);
+                    document.body.appendChild(playcountDiv);
+                }
+            }
+        };
+        xhttp.send();
+    </script>
+</body>
+
+</html>
